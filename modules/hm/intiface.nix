@@ -8,35 +8,40 @@
   inherit (lib) types;
 in {
   options.services.intiface = {
-    enable = lib.mkEnableOption "intiface";
+    enable = lib.mkEnableOption "Intiface";
     package = lib.mkOption {
       type = types.package;
-      default = pkgs.callPackage ../../../pkgs/intiface-engine {};
+      default = pkgs.callPackage ../../pkgs/intiface-engine {};
       description = "The intiface package to use.";
     };
+
     port = lib.mkOption {
       type = types.port;
       default = 12345;
-      description = "Port to listen on for websocket connections";
+      description = "Port to listen on for websocket connections.";
     };
     serverName = lib.mkOption {
       type = types.nullOr types.str;
       default = null;
-      description = "Name to use for the websocket server";
+      description = "Name to use for the websocket server.";
+    };
+    allInterfaces = lib.mkOption {
+      type = types.bool;
+      default = false;
+      description = "If enabled, the websocket server listens on all interfaces. Otherwise it only listen on localhost.";
     };
 
-    allInterfaces = lib.mkEnableOption "If passed, websocket server listens on all interfaces. Otherwise, only listen on 127.0.0.1.";
-    bluetoothLE = lib.mkEnableOption "Turn on bluetooth LE device support";
+    bluetoothLE = lib.mkEnableOption "Bluetooth LE device support";
     lovense = lib.mkOption {
       type = types.submodule ({config, ...}: {
         options = {
-          enable = lib.mkEnableOption "Turn on lovense connect app device support";
-          hid = lib.mkEnableOption "Turn on lovense dongle hid device support";
-          serial = lib.mkEnableOption "Turn on lovense dongle serial device support";
+          enable = lib.mkEnableOption "Lovense app device support";
+          hid = lib.mkEnableOption "Lovense dongle HID device support";
+          serial = lib.mkEnableOption "Lovense dongle serial device support";
         };
       });
       default = {};
-      description = "Options for lovense device support";
+      description = "Options for Lovense device support";
     };
   };
 

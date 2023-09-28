@@ -1,5 +1,5 @@
 {
   imports = [
-    ./intiface
+    ./intiface.nix
   ];
 }

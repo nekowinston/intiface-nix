@@ -1,0 +1,27 @@
+{
+    "intiface-engine": {
+        "cargoLocks": {
+            "Cargo.lock": [
+                "./intiface-engine-v1.4.2/Cargo.lock",
+                {}
+            ]
+        },
+        "date": null,
+        "extract": null,
+        "name": "intiface-engine",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "intiface",
+            "repo": "intiface-engine",
+            "rev": "v1.4.2",
+            "sha256": "sha256-jx++ll3ZNZ0SvLHQgpxYmCxDjObl1ohMXb1sYIhJ98U=",
+            "type": "github"
+        },
+        "version": "v1.4.2"
+    }
+}

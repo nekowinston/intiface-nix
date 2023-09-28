@@ -4,4 +4,6 @@
   overlays = import ./overlays;
 
   intiface-engine = pkgs.callPackage ./pkgs/intiface-engine {};
+
+  docs = pkgs.callPackage ./docs {};
 }

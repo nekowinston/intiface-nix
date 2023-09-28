@@ -1,0 +1,4 @@
+[intiface-engine]
+src.github = "intiface/intiface-engine"
+fetch.github = "intiface/intiface-engine"
+cargo_locks = ["Cargo.lock"]

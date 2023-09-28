@@ -1,31 +1,20 @@
 {
+  callPackage,
   dbus,
-  fetchFromGitHub,
   gcc,
   openssl,
   pkg-config,
   rustPlatform,
   udev,
 }: let
-  npins = import ../../npins;
+  nvfetcher = (callPackage ../../_sources/generated.nix {}).intiface-engine;
 in
-  rustPlatform.buildRustPackage rec {
-    name = "intiface-engine";
-    version = npins.intiface-engine.version;
-
-    src = fetchFromGitHub {
-      owner = "intiface";
-      repo = "intiface-engine";
-      rev = npins.intiface-engine.revision;
-      sha256 = npins.intiface-engine.hash;
-    };
+  rustPlatform.buildRustPackage {
+    inherit (nvfetcher) pname version src;
+    cargoLock = nvfetcher.cargoLock."Cargo.lock";
 
     env.VERGEN_BUILD_TIMESTAMP = "0";
-    env.VERGEN_GIT_SHA_SHORT = npins.intiface-engine.revision;
-
-    cargoLock = {
-      lockFile = "${src}/Cargo.lock";
-    };
+    env.VERGEN_GIT_SHA_SHORT = "0000000";
 
     nativeBuildInputs = [
       gcc

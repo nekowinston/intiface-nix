@@ -1,3 +1,8 @@
+[intiface-central]
+src.manual = "v2.4.3"
+# src.github = "intiface/intiface-central"
+fetch.github = "intiface/intiface-central"
+
 [intiface-engine]
 src.github = "intiface/intiface-engine"
 fetch.github = "intiface/intiface-engine"

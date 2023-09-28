@@ -42,7 +42,7 @@
               then let
                 subpath = lib.removePrefix "/" (lib.removePrefix (toString ../.) (toString decl));
               in {
-                url = "https://git.winston.sh/winston/intiface-nix/src/branch/master/${subpath}";
+                url = "https://github.com/nekowinston/intiface-nix/tree/master/${subpath}";
                 name = subpath;
               }
               else decl)

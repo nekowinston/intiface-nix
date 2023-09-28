@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Intiface-nix options</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="pandoc.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="intiface-nix">Intiface-nix</h1>
+<h2 id="services.intiface.enable">services.intiface.enable</h2>
+<p>Whether to enable Intiface.</p>
+<p><em>Type:</em> boolean</p>
+<p><em>Default:</em> <code>false</code></p>
+<p><em>Example:</em> <code>true</code></p>
+<p><em>Declared by:</em> - <a
+href="https://github.com/nekowinston/intiface-nix/tree/master/modules/hm/intiface.nix">modules/hm/intiface.nix</a></p>
+<h2 id="services.intiface.package">services.intiface.package</h2>
+<p>The intiface package to use.</p>
+<p><em>Type:</em> package</p>
+<p><em>Default:</em>
+<code>&lt;derivation intiface-engine-v1.4.2&gt;</code></p>
+<p><em>Declared by:</em> - <a
+href="https://github.com/nekowinston/intiface-nix/tree/master/modules/hm/intiface.nix">modules/hm/intiface.nix</a></p>
+<h2
+id="services.intiface.allinterfaces">services.intiface.allInterfaces</h2>
+<p>If enabled, the websocket server listens on all interfaces. Otherwise
+it only listen on localhost.</p>
+<p><em>Type:</em> boolean</p>
+<p><em>Default:</em> <code>false</code></p>
+<p><em>Declared by:</em> - <a
+href="https://github.com/nekowinston/intiface-nix/tree/master/modules/hm/intiface.nix">modules/hm/intiface.nix</a></p>
+<h2
+id="services.intiface.bluetoothle">services.intiface.bluetoothLE</h2>
+<p>Whether to enable Bluetooth LE device support.</p>
+<p><em>Type:</em> boolean</p>
+<p><em>Default:</em> <code>false</code></p>
+<p><em>Example:</em> <code>true</code></p>
+<p><em>Declared by:</em> - <a
+href="https://github.com/nekowinston/intiface-nix/tree/master/modules/hm/intiface.nix">modules/hm/intiface.nix</a></p>
+<h2 id="services.intiface.lovense">services.intiface.lovense</h2>
+<p>Options for Lovense device support</p>
+<p><em>Type:</em> submodule</p>
+<p><em>Default:</em> <code>{ }</code></p>
+<p><em>Declared by:</em> - <a
+href="https://github.com/nekowinston/intiface-nix/tree/master/modules/hm/intiface.nix">modules/hm/intiface.nix</a></p>
+<h2
+id="services.intiface.lovense.enable">services.intiface.lovense.enable</h2>
+<p>Whether to enable Lovense app device support.</p>
+<p><em>Type:</em> boolean</p>
+<p><em>Default:</em> <code>false</code></p>
+<p><em>Example:</em> <code>true</code></p>
+<p><em>Declared by:</em> - <a
+href="https://github.com/nekowinston/intiface-nix/tree/master/modules/hm/intiface.nix">modules/hm/intiface.nix</a></p>
+<h2
+id="services.intiface.lovense.hid">services.intiface.lovense.hid</h2>
+<p>Whether to enable Lovense dongle HID device support.</p>
+<p><em>Type:</em> boolean</p>
+<p><em>Default:</em> <code>false</code></p>
+<p><em>Example:</em> <code>true</code></p>
+<p><em>Declared by:</em> - <a
+href="https://github.com/nekowinston/intiface-nix/tree/master/modules/hm/intiface.nix">modules/hm/intiface.nix</a></p>
+<h2
+id="services.intiface.lovense.serial">services.intiface.lovense.serial</h2>
+<p>Whether to enable Lovense dongle serial device support.</p>
+<p><em>Type:</em> boolean</p>
+<p><em>Default:</em> <code>false</code></p>
+<p><em>Example:</em> <code>true</code></p>
+<p><em>Declared by:</em> - <a
+href="https://github.com/nekowinston/intiface-nix/tree/master/modules/hm/intiface.nix">modules/hm/intiface.nix</a></p>
+<h2 id="services.intiface.port">services.intiface.port</h2>
+<p>Port to listen on for websocket connections.</p>
+<p><em>Type:</em> 16 bit unsigned integer; between 0 and 65535 (both
+inclusive)</p>
+<p><em>Default:</em> <code>12345</code></p>
+<p><em>Declared by:</em> - <a
+href="https://github.com/nekowinston/intiface-nix/tree/master/modules/hm/intiface.nix">modules/hm/intiface.nix</a></p>
+<h2 id="services.intiface.servername">services.intiface.serverName</h2>
+<p>Name to use for the websocket server.</p>
+<p><em>Type:</em> null or string</p>
+<p><em>Default:</em> <code>null</code></p>
+<p><em>Declared by:</em> - <a
+href="https://github.com/nekowinston/intiface-nix/tree/master/modules/hm/intiface.nix">modules/hm/intiface.nix</a></p>
+</body>
+</html>
